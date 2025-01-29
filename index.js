@@ -23,7 +23,7 @@ app.use(errorHandler);
 const startServer = async () => {
     try {
         await db.authenticate();
-        await db.sync({ force: true });
+        await db.sync({ force: false });
 
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
     } catch (error) {
